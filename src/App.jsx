@@ -13,7 +13,7 @@ const router = createBrowserRouter([
     element: <CrearEmpresa />
   },
   {
-    path: '/editar',
+    path: '/editar/:id',
     element: <EditarEmpresa />
   },
 ])

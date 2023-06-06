@@ -6,6 +6,7 @@ import {
   doc
 } from "firebase/firestore";
 import { dataBase } from "../dataFirebase/conectionFirabse";
+import { Link } from "react-router-dom";
 
 const ListarEmpresas = () => {
   const [empresas, setEmpresas] = useState([]);
@@ -33,10 +34,10 @@ const ListarEmpresas = () => {
             <p>{empresa.id}</p>
             <h3>{empresa.nombre}</h3>
             <h3>{empresa.ciudad}</h3>
-            <img src={empresa.img} alt="" />
+            <img src={empresa.resultado} alt="" />
             <section>
               <button onClick={()=>{eliminarEmpresa(empresa.id)}}>Eliminar</button>
-              <button>Editar</button>
+              <Link to={'/editar/'+empresa.id}>Editar</Link>
             </section>
           </section>
         ))
